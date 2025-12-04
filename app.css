@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+    color: white;
+    padding-bottom: 50px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+/* SEARCH AREA */
+.search-area {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.search-area input {
+    width: 40%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+}
+
+.search-area button {
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* CURRENT WEATHER */
+.current-weather {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 20px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.left {
+    width: 40%;
+}
+
+.main-weather {
+    display: flex;
+    align-items: center;
+}
+
+.main-weather img {
+    width: 90px;
+}
+
+.temperature {
+    font-size: 70px;
+    margin-left: 20px;
+}
+
+.right {
+    width: 55%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.detail-box {
+    background: rgba(255,255,255,0.25);
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+/* FORECAST */
+.forecast-section {
+    width: 90%;
+    margin: auto;
+}
+
+.forecast-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.forecast-card {
+    width: 13%;
+    background: rgba(255,255,255,0.28);
+    padding: 18px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.forecast-card img {
+    width: 60px;
+    margin: 10px 0;
+}
+
+/* RADAR */
+.radar-section {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.radar-box {
+    background: rgba(0,0,0,0.3);
+    height: 300px;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
