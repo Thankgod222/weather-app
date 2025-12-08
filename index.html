@@ -1,145 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Global Weather Intelligence</title>
-    <link rel="stylesheet" href="app.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="app.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
-    <header class="navbar">
-        <h1 class="logo">Global Weather Intelligence</h1>
-        <nav>
-            <ul>
-                <li><a href="./index.html"></a>Home</li>
-                <li><a href="./radar-section"></a> Radar</li>
-                <li>Alerts</li>
-                <li>About</li>
-            </ul>
-        </nav>
+  <body>
+    <header class="navbar" id="home">
+      <h1 class="logo">Global Weather Intelligence</h1>
+      <nav>
+        <ul>
+          <li><a href="#home"></a>Home</li>
+          <li><a href="#radar"></a> Radar</li>
+          <li>Alerts</li>
+          <li>About</li>
+        </ul>
+      </nav>
     </header>
 
     <section class="search-area">
-        <input type="text" id="city-input" placeholder="Search city or detect location...">
-        <button id="search-btn">Search</button>
-        <button id="loc-btn">Use My Location</button>
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Search city or detect location..."
+      />
+      <button id="search-btn">Search</button>
+      <button id="loc-btn">Use My Location</button>
     </section>
 
     <section class="current-weather">
-        <div class="left">
-            <h2 class="city-name">benin city</h2>
-            <p class="date">Monday, 12 December 2025</p>
+      <div class="left">
+        <h2 class="city-name">benin city</h2>
+        <p id="date" class="date">Monday, 12 December 2025</p>
 
-            <div class="main-weather">
-                <img src="https://openweathermap.org/img/wn/01d.png" class="weather-icon">
-                <h1 class="temperature">27°C</h1>
-                <p class="description">Clear Sky</p>
-            </div>
+        <div class="main-weather">
+          <img
+            src="https://openweathermap.org/img/wn/01d.png"
+            class="weather-icon"
+          />
+          <h1 class="temperature">27°C</h1>
+          <p class="description">Clear Sky</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="detail-box">
+          <p>Humidity</p>
+          <h3 class="humidity">65%</h3>
         </div>
 
-        <div class="right">
-            <div class="detail-box">
-                <p>Humidity</p>
-                <h3 class="humidity">65%</h3>
-            </div>
-
-            <div class="detail-box">
-                <p>Wind Speed</p>
-                <h3 class="wind">12 km/h</h3>
-            </div>
-
-            <div class="detail-box">
-                <p>Pressure</p>
-                <h3>1012 hPa</h3>
-            </div>
-
-            <div class="detail-box">
-                <p>Air Quality Index</p>
-                <h3>42 (Good)</h3>
-            </div>
-
-            <div class="detail-box">
-                <p>Sunrise</p>
-                <h3>06:21 AM</h3>
-            </div>
-
-            <div class="detail-box">
-                <p>Sunset</p>
-                <h3>06:45 PM</h3>
-            </div>
+        <div class="detail-box">
+          <p>Wind Speed</p>
+          <h3 class="wind">12 km/h</h3>
         </div>
+
+        <div class="detail-box">
+          <p>Pressure</p>
+          <h3 class="pressure">1012 hPa</h3>
+        </div>
+
+        <div class="detail-box">
+          <p>Air Quality Index</p>
+          <h3>42 (Good)</h3>
+        </div>
+
+        <div class="detail-box">
+          <p>Sunrise</p>
+          <h3 class="sunrise">06:21 AM</h3>
+        </div>
+
+        <div class="detail-box">
+          <p>Sunset</p>
+          <h3 class="sunset">06:45 PM</h3>
+        </div>
+      </div>
     </section>
 
     <section class="forecast-section">
-        <h2>Next 7 Days Forecast</h2>
+      <h2>Next 7 Days Forecast</h2>
 
-        <div class="forecast-grid">
-
-            <div class="forecast-card">
-                <p class="day">Tue</p>
-                <img src="https://openweathermap.org/img/wn/03d.png">
-                <h3>30°C</h3>
-                <p>Cloudy</p>
-            </div>
-
-            <div class="forecast-card">
-                <p class="day">Wed</p>
-                <img src="https://openweathermap.org/img/wn/10d.png">
-                <h3>25°C</h3>
-                <p>Rain</p>
-            </div>
-
-            <div class="forecast-card">
-                <p class="day">Thu</p>
-                <img src="https://openweathermap.org/img/wn/01d.png">
-                <h3>32°C</h3>
-                <p>Sunny</p>
-            </div>
-
-            <div class="forecast-card">
-                <p class="day">Fri</p>
-                <img src="https://openweathermap.org/img/wn/04d.png">
-                <h3>27°C</h3>
-                <p>Fog</p>
-            </div>
-
-            <div class="forecast-card">
-                <p class="day">Sat</p>
-                <img src="https://openweathermap.org/img/wn/02d.png">
-                <h3>29°C</h3>
-                <p>Partly Cloudy</p>
-            </div>
-
-            <div class="forecast-card">
-                <p class="day">Sun</p>
-                <img src="https://openweathermap.org/img/wn/13d.png">
-                <h3>19°C</h3>
-                <p>Snow</p>
-            </div>
-
-            <div class="forecast-card">
-                <p class="day">Mon</p>
-                <img src="https://openweathermap.org/img/wn/11d.png">
-                <h3>23°C</h3>
-                <p>Thunderstorm</p>
-            </div>
-
+      <div class="forecast-grid">
+        <div class="forecast-card">
+          <p class="day">Tue</p>
+          <img src="https://openweathermap.org/img/wn/03d.png" />
+          <h3>30°C</h3>
+          <p>Cloudy</p>
         </div>
+
+        <div class="forecast-card">
+          <p class="day">Wed</p>
+          <img src="https://openweathermap.org/img/wn/10d.png" />
+          <h3>25°C</h3>
+          <p>Rain</p>
+        </div>
+
+        <div class="forecast-card">
+          <p class="day">Thu</p>
+          <img src="https://openweathermap.org/img/wn/01d.png" />
+          <h3>32°C</h3>
+          <p>Sunny</p>
+        </div>
+
+        <div class="forecast-card">
+          <p class="day">Fri</p>
+          <img src="https://openweathermap.org/img/wn/04d.png" />
+          <h3>27°C</h3>
+          <p>Fog</p>
+        </div>
+
+        <div class="forecast-card">
+          <p class="day">Sat</p>
+          <img src="https://openweathermap.org/img/wn/02d.png" />
+          <h3>29°C</h3>
+          <p>Partly Cloudy</p>
+        </div>
+
+        <div class="forecast-card">
+          <p class="day">Sun</p>
+          <img src="https://openweathermap.org/img/wn/13d.png" />
+          <h3>19°C</h3>
+          <p>Snow</p>
+        </div>
+
+        <div class="forecast-card">
+          <p class="day">Mon</p>
+          <img src="https://openweathermap.org/img/wn/11d.png" />
+          <h3>23°C</h3>
+          <p>Thunderstorm</p>
+        </div>
+      </div>
     </section>
 
-    <section class="radar-section">
-        <h2>Real-Time Weather Radar</h2>
-        <div class="radar-box"></div>
+    <section id="radar" class="radar-section">
+      <h2>Real-Time Weather Radar</h2>
+      <div class="radar-box"></div>
     </section>
 
     <footer>
-        <p>Data sourced from satellites, radars, stations, buoys, and meteorological APIs.</p>
+      <p>
+        Data sourced from satellites, radars, stations, buoys, and
+        meteorological APIs.
+      </p>
     </footer>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
-
