@@ -10,8 +10,27 @@ const searchBox = document.querySelector(".search-area input");
 const searchBtn = document.querySelector(".search-area button");
 const locationBtn = document.querySelector("#loc-btn");
 
+function formatLocalDate(dt, timezone) {
+  const localTime = new Date((dt + timezone) * 1000);
+
+  return localTime.toLocaleString("en-US", {
+    timeZone: "UTC", // 🔥 THIS FIXES THE +1 HOUR ISSUE
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 function updateUI(data) {
   document.querySelector(".city-name").innerHTML = data.name;
+  // ✅ Local date integration
+  document.getElementById("local-date").innerText = formatLocalDate(
+    data.dt,
+    data.timezone
+  );
   document.querySelector(".temperature").innerHTML =
     Math.round(data.main.temp) + "°C";
   document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
@@ -85,7 +104,6 @@ function showError(error) {
       alert("An unknown error occurred.");
   }
 }
-
 
 // Extract coordinates and fetch weather
 function fetchWeatherByLocation(position) {
