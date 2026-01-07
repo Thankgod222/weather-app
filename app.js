@@ -2,9 +2,11 @@ const apiKey = "a80829a6cb345db29c5175c59edbc828";
 const apiUrl =
   "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-// const coordApiUrl = "https://api.openweathermap.org/data/2.5/weather?";
 const coordApiUrl =
   "https://api.openweathermap.org/data/2.5/weather?units=metric";
+
+const forecastApiUrl =
+  "https://api.openweathermap.org/data/2.5/forecast?units=metric";
 
 const searchBox = document.querySelector(".search-area input");
 const searchBtn = document.querySelector(".search-area button");
@@ -66,7 +68,8 @@ async function checkWeather(city) {
   updateUI(data);
   console.log(data);
 
-  //TO GET THE CURRENT DATE OF EACH SEARCHED CITY
+  //TO GET THE 5DAY FORECAST OF EACH SEARCHED CITY
+  fetch5DayForecast(data.coord.lat, data.coord.lon);
 }
 
 // Search weather by coordinates
@@ -78,6 +81,7 @@ async function fetchWeatherByCoordinates(lat, lon) {
   updateUI(data);
 
   console.log(data);
+   fetch5DayForecast(lat, lon);
 }
 
 // Handle geolocation
@@ -121,3 +125,36 @@ searchBtn.addEventListener("click", () => {
 });
 
 locationBtn.addEventListener("click", getUserLocation);
+
+//Next 5 Days Forecast
+async function fetch5DayForecast(lat, lon) {
+  const response = await fetch(
+    `${forecastApiUrl}&lat=${lat}&lon=${lon}&appid=${apiKey}`
+  );
+
+  const data = await response.json();
+
+  const forecastGrid = document.querySelector(".forecast-grid");
+  forecastGrid.innerHTML = "";
+
+  // Filter one forecast per day (12:00 PM)
+  const dailyForecasts = data.list.filter(item =>
+    item.dt_txt.includes("12:00:00")
+  ).slice(0, 5);
+
+  dailyForecasts.forEach(day => {
+    const date = new Date(day.dt * 1000).toLocaleDateString("en-US", {
+      weekday: "short"
+    });
+
+    forecastGrid.innerHTML += `
+      <div class="forecast-card">
+        <p class="day">${date}</p>
+        <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png">
+        <h3>${Math.round(day.main.temp)}°C</h3>
+        <p>${day.weather[0].description}</p>
+      </div>
+    `;
+  });
+}
+
